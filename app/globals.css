@@ -1,79 +1,57 @@
-:root {
-  --background: linear-gradient(180deg, #232029, #231e2d);
-  --foreground: #ddd8e4;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-  --background: linear-gradient(180deg, #232029, #231e2d);
-  --foreground: #ddd8e4;
-  }
-}
-
-html,
-body {
-  max-width: 100vw;
-  overflow-x: hidden;
-}
-
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600;700&family=Montserrat:wght@400;700&display=swap');
 
 * {
   box-sizing: border-box;
-  padding: 0;
+}
+
+html {
+  font-family: 'Quicksand', sans-serif;
+}
+
+body {
   margin: 0;
+  background: radial-gradient(#282c34, #282c34);
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
+.header-background {
+  position: absolute;
+  width: 100%;
+  height: 320px;
+  top: 0;
+  left: 0;
+  z-index: -1;
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
+svg {
+  display: block;
+  width: 100%;
+  height: auto;
 }
 
-main {
+.not-found,
+.error {
+  margin-top: 5rem;
   text-align: center;
-  margin: 5rem auto;
 }
 
-main img {
-  width: 10rem;
-  height: 10rem;
-  margin: 0 auto;
-  object-fit: cover;
-  filter: drop-shadow(0 0 4px #f6c363);
+.not-found h1,
+.error h1 {
+  font-size: 5rem;
+  margin: 0px;
+  font-weight: 900;
+  color: #262626;
+  text-transform: uppercase;
+  background: linear-gradient(90deg, #f9572a, #ffc905);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: cover;
+  background-position: center;
+  font-family: 'Montserrat', sans-serif;
 }
 
-h1 {
-  font-size: 3rem;
-  margin: 3rem auto;
-  color: #ede9f3;
-  font-family: 'Poppins', sans-serif;
-}
-
-p {
+.not-found p,
+.error p {
   font-size: 1.5rem;
-}
-
-p a {
-  color: #f4c33d;
-  text-decoration: none;
-  padding-bottom: 0.05rem;
-  border-bottom: 2px solid #f4c33d;
-}
-
-p a:hover,
-p a:active {
-  color: #bd3df4;
-  border-color: #bd3df4;
+  font-weight: 500;
+  color: #ddd8d8;
 }
