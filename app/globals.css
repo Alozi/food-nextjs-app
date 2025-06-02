@@ -55,3 +55,11 @@ svg {
   font-weight: 500;
   color: #ddd8d8;
 }
+
+ul {
+  list-style: none;
+}
+
+a {
+    color: #ddd8d8;
+}
