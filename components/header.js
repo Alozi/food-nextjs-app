@@ -5,11 +5,9 @@ import classes from './header.module.css';
 import logoImage from '@/assets/logo.png'
 
 export default function Header() {
-    console.log(logoImage);
-
     return <header className={classes.header}>
         <Link className={classes.logo} href="/">
-            <Image src={logoImage} alt="A plate with food on it" />
+            <Image src={logoImage} alt="A plate with food on it" priority />
             Next Level Food
         </Link>
         <nav className={classes.nav}>
