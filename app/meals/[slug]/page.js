@@ -6,10 +6,8 @@ import classes from './page.module.css';
 
 export default async function MealDetailsPage({ params }) {
     const { slug } = await params;
-    console.log(slug);
-
+    
     const meal = getMeal(slug);
-    console.log(meal);
 
     if(!meal) {
         notFound();
