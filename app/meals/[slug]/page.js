@@ -1,10 +1,36 @@
-export default async function MealPage({ params }) {
+import Image from 'next/image';
+
+import { getMeal } from '@/lib/meals';
+import classes from './page.module.css';
+
+export default async function MealDetailsPage({ params }) {
     const { slug } = await params;
-    
-    return (
+    console.log(slug);
+
+    const meal = getMeal(slug);
+    console.log(meal);
+
+    meal.instructions = meal.instructions.replace(/\n/g, '<br />');
+
+    return (<>
+        <header className={classes.header}>
+            <div className={classes.image}>
+                <Image src={meal.image} alt={meal.title} fill />
+            </div>
+            <div className={classes.headerText}>
+                <h1>{meal.title}</h1>
+                <p className={classes.creator}>
+                    by <a href={`mailto:${meal.creator_email}`}>{meal.creator}</a>
+                </p>
+                <p className={classes.summary}>
+                    {meal.summary}
+                </p>
+            </div>
+        </header>
         <main>
-            <h1 style={{ color: 'white', textAlign: 'center' }}>This is Meal</h1>
-            <p>{slug}</p>
+            <p className={classes.instructions} dangerouslySetInnerHTML={{
+                __html: meal.instructions
+            }}></p>
         </main>
-    );
+    </>);
 }
