@@ -12,6 +12,7 @@
 }
 
 .highlight {
+  margin-left: 10px;
   background: linear-gradient(90deg, #f9572a, #ff8a05);
   background-clip: text;
   -webkit-background-clip: text;
